@@ -1,0 +1,29 @@
+AI SaaS Full Stack Text-to-Image Generator App
+
+📦 FRONTEND (Vite + React):
+- React 19 with Vite
+- Tailwind CSS 4.1.5
+- Google Fonts (via CSS import)
+- Framer Motion (Animations)
+- React Router DOM v7.5.3
+- Stripe.js + React Stripe
+- Axios, Toast Notifications
+- Environment Variables via .env
+
+🔧 BACKEND (Node + Express):
+- Express 5.1
+- MongoDB with Mongoose
+- bcryptjs (Password hashing)
+- dotenv (Environment variables)
+- form-data
+- JWT (Authentication)
+- Stripe and Razorpay payment integration
+- CORS, Nodemon for development
+
+🐳 DEV ENVIRONMENT WITH DOCKER:
+- Node.js 18 image
+- Multi-stage Dockerfile for frontend and backend
+- PM2 for managing concurrent dev processes
+- Ports:
+    - Frontend (Vite): 5137
+    - Backend (Express): 4000

@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: client
+    working_dir: /app/client
+    ports:
+      - "5137:5137"
+    command: npx vite dev   # ✅ run vite via npx
+    volumes:
+      - ./client:/app/client:cached
+      - /app/client/node_modules
+    environment:
+      - PORT=5137
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    working_dir: /app/server
+    ports:
+      - "4000:4000"
+    command: npx nodemon server.js  # ✅ run nodemon via npx
+    volumes:
+      - ./server:/app/server:cached
+      - /app/server/node_modules
+    environment:
+      - PORT=4000
+      - MONGODB_URI=mongodb://mongo:27017/AI_image_generator
+      - JWT_SECRET=secretkey
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
