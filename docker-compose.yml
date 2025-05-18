@@ -30,10 +30,8 @@ services:
     volumes:
       - ./server:/app/server:cached
       - /app/server/node_modules
-    environment:
-      - PORT=4000
-      - MONGODB_URI=mongodb://mongo:27017/AI_image_generator
-      - JWT_SECRET=secretkey
+    env_file:
+      - .env
     depends_on:
       - mongo
 
