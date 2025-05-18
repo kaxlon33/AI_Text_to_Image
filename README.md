@@ -11,9 +11,9 @@ Text-to-image generation using AI APIs
 
 Credit system:
 
-   1.  5 free image generations per user
+   (a)  5 free image generations per user
     
-   2.  Additional credits can be purchased
+   (b)  Additional credits can be purchased
 
 Real-time image rendering
 
